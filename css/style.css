@@ -1,5 +1,5 @@
 :root {
-   --tb-yellow: #FFCD00;
+  --tb-yellow: #FFCD00;
   --tb-dark: #1a1d21;
   --tb-gray: #f5f6f8;
   --tb-light: #ffffff;
@@ -58,7 +58,7 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--tb-blue);
+  color: var(--tb-yellow);
 }
 
 /* Главный экран */
@@ -101,7 +101,7 @@ body {
 
 .search-bar button {
   padding: 16px 24px;
-  background: var(--tb-blue);
+  background: var(--tb-yellow);
   color: white;
   border: none;
   cursor: pointer;
@@ -126,9 +126,9 @@ body {
 }
 
 .filter-btn.active {
-  background: var(--tb-blue);
+  background: var(--tb-yellow);
   color: white;
-  border-color: var(--tb-blue);
+  border-color: var(--tb-yellow);
 }
 
 /* Сетка вакансий */
@@ -166,7 +166,7 @@ body {
 }
 
 .salary {
-  color: var(--tb-blue);
+  color: var(--tb-yellow);
   font-weight: 600;
   font-size: 15px;
 }
