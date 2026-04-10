@@ -1,10 +1,10 @@
 :root {
   --tb-blue: #0066ff;
-  --tb-blue-hover: #0052cc;
-  --tb-gray: #f5f6f8;
   --tb-dark: #1a1d21;
+  --tb-gray: #f5f6f8;
   --tb-light: #ffffff;
   --tb-border: #e0e0e0;
+  --text: #333;
 }
 
 * {
@@ -16,49 +16,132 @@
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--tb-gray);
-  color: var(--tb-dark);
+  color: var(--text);
   line-height: 1.6;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* Шапка */
 .header {
-  background-color: var(--tb-light);
+  background: var(--tb-light);
   padding: 20px 0;
   border-bottom: 1px solid var(--tb-border);
 }
 
 .header .container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 16px;
 }
 
 .logo {
-  height: 32px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tb-blue);
 }
 
-.header h1 {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--tb-dark);
-}
-
-.vacancy-list {
+.nav {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 40px;
+  gap: 32px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--tb-dark);
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.nav-link:hover {
+  color: var(--tb-blue);
+}
+
+/* Главный экран */
+.hero {
+  padding: 80px 0;
+  text-align: center;
+  background: var(--tb-light);
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--tb-dark);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.search-bar {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid var(--tb-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 16px 24px;
+  background: var(--tb-blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Фильтры */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: white;
+  border: 1px solid var(--tb-border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filter-btn.active {
+  background: var(--tb-blue);
+  color: white;
+  border-color: var(--tb-blue);
+}
+
+/* Сетка вакансий */
+.vacancy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
 }
 
 .vacancy-card {
   background: var(--tb-light);
-  padding: 20px;
-  border-radius: 12px;
+  padding: 24px;
+  border-radius: 16px;
   border: 1px solid var(--tb-border);
   text-decoration: none;
   color: inherit;
@@ -66,45 +149,72 @@ body {
 }
 
 .vacancy-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.1);
+  transform: translateY(-4px);
 }
 
-.vacancy-card h3 {
-  font-size: 18px;
-  color: var(--tb-blue);
+.card-header {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 8px;
 }
 
-.vacancy-card p {
-  font-size: 14px;
-  color: #555;
-}
-
-.contacts {
-  background: white;
-  padding: 24px;
-  border-radius: 12px;
-  border: 1px solid var(--tb-border);
-  max-width: 500px;
-}
-
-.contacts h2 {
-  margin-bottom: 16px;
+.card-header h3 {
+  font-size: 18px;
   color: var(--tb-dark);
+  font-weight: 600;
+}
+
+.salary {
+  color: var(--tb-blue);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.company {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  font-size: 12px;
+  background: #eef2ff;
+  color: var(--tb-blue);
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
 .footer {
-  background-color: var(--tb-light);
-  padding: 20px 0;
-  border-top: 1px solid var(--tb-border);
+  padding: 40px 0;
+  text-align: center;
+  color: #888;
   font-size: 14px;
-  color: #777;
+  background: var(--tb-light);
+  margin-top: 80px;
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
-  .header .container {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .search-bar {
     flex-direction: column;
-    text-align: center;
+  }
+
+  .search-bar button {
+    width: 100%;
   }
 }
