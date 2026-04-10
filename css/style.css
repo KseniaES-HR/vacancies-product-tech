@@ -1,9 +1,9 @@
 :root {
- --tb-primary: #FFCD00;    /* Официальный жёлтый цвет Т-Банка */
-  --tb-dark: #000000;       /* Чёрный */
-  --tb-light: #FFFFFF;      /* Белый */
-  --tb-gray: #F5F6F8;
-  --tb-border: #E0E0E0;
+   --tb-yellow: #FFCD00;
+  --tb-dark: #1a1d21;
+  --tb-gray: #f5f6f8;
+  --tb-light: #ffffff;
+  --tb-border: #e0e0e0;
   --text: #333;
 }
 
